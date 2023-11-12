@@ -3,11 +3,11 @@
 ## Excecutes all commands in a single shell (allows us to activate a virtual env and install dependencies in it)
 .ONESHELL:
 
-.PHONY: 
+.PHONY: venv test require install create
 
-## Immediately set variables (only set at declaration time)
+## Variables set at declaration time
 VENV_NAME := pytemplate
-REQUIREMENTS := requirments.txt
+REQUIREMENTS := requirements.txt
 
 ## Recursively expanded variables
 python_source = python
@@ -15,17 +15,21 @@ python_source = python
 venv: ## Create virtual environment
 	python -m venv .venv/${VENV_NAME} 
 
-test:
+test: ## Put pytests here
+
+check:
+
+format:
 
 require:
+	pip install pip-tools
+	pip-compile -o requirements.txt pyproject.toml
 
 install:
-	python -m pip install -e .	
+	pip install -r ${REQUIREMENTS}
+	python -m pip install -e .
 
-
-create: ## Create virtual environment and install dependencies and the project itself  
-	venv
-	install
+create: venv install ## Create virtual environment and install dependencies and the project itself  
 
 
 

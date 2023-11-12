@@ -1,0 +1,18 @@
+[tool.poetry]
+# $ pip install pytemplate
+name = "pytemplate"
+version = "0.0.1"
+description = "A sample Python project"
+authors = ["Bradley Selee"]
+license = "LICENSE.txt"
+
+# This field lists other packages that your project depends on to run.
+# Any package you put here will be installed by pip when your project is
+# installed, so they must be valid existing projects.
+[tool.poetry.dependencies]
+python = ">=3.9"
+matplotlib=  "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
