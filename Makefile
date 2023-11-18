@@ -6,11 +6,12 @@
 .PHONY: venv test require install create
 
 ## Variables set at declaration time
+PROJECT_NAME := pytemplate
 VENV_NAME := pytemplate
 REQUIREMENTS := requirements.txt
 
 ## Recursively expanded variables
-python_source = python
+python_source = ${PROJECT_NAME} scripts/  # Location of python files 
 
 venv: ## Create virtual environment
 	python -m venv .venv/${VENV_NAME} 
@@ -18,21 +19,25 @@ venv: ## Create virtual environment
 test: ## Put pytests here
 
 check:
+	mypy ${python_source}
+	pylint ${python_source}
 
 format:
+	black ${python_source}
 
 require:
 	pip install pip-tools
 	pip-compile -o requirements.txt pyproject.toml
 
-install:
+install: ## Install for linux only; we also need to upgrade pip to support editable installation with only pyproject.toml file
+	source .venv/${VENV_NAME}/bin/activate
+	pip install --upgrade pip
+	pip install -r ${REQUIREMENTS}
+	python -m pip install -e .
+
+install_windows: ## Install for windows only; must activate the environment manually first
+	pip install --upgrade pip
 	pip install -r ${REQUIREMENTS}
 	python -m pip install -e .
 
 create: venv install ## Create virtual environment and install dependencies and the project itself  
-
-
-
-
-
-

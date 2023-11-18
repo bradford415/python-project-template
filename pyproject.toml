@@ -11,7 +11,10 @@ license = "LICENSE.txt"
 # installed, so they must be valid existing projects.
 [tool.poetry.dependencies]
 python = ">=3.9"
-matplotlib=  "*"
+matplotlib = "*"
+mypy = "*"
+pylint = "*"
+black = "*"
 
 [build-system]
 requires = ["poetry-core"]

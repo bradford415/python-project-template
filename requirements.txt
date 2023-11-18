@@ -4,17 +4,31 @@
 #
 #    pip-compile --output-file=requirements.txt pyproject.toml
 #
+astroid==3.0.1
+    # via pylint
+colorama==0.4.6
+    # via pylint
 contourpy==1.2.0
     # via matplotlib
 cycler==0.12.1
     # via matplotlib
-fonttools==4.44.0
+dill==0.3.7
+    # via pylint
+fonttools==4.44.3
     # via matplotlib
+isort==5.12.0
+    # via pylint
 kiwisolver==1.4.5
     # via matplotlib
-matplotlib==3.8.1
+matplotlib==3.8.2
     # via pytemplate (pyproject.toml)
-numpy==1.26.1
+mccabe==0.7.0
+    # via pylint
+mypy==1.7.0
+    # via pytemplate (pyproject.toml)
+mypy-extensions==1.0.0
+    # via mypy
+numpy==1.26.2
     # via
     #   contourpy
     #   matplotlib
@@ -22,9 +36,23 @@ packaging==23.2
     # via matplotlib
 pillow==10.1.0
     # via matplotlib
+platformdirs==4.0.0
+    # via pylint
+pylint==3.0.2
+    # via pytemplate (pyproject.toml)
 pyparsing==3.1.1
     # via matplotlib
 python-dateutil==2.8.2
     # via matplotlib
 six==1.16.0
     # via python-dateutil
+tomli==2.0.1
+    # via
+    #   mypy
+    #   pylint
+tomlkit==0.12.3
+    # via pylint
+typing-extensions==4.8.0
+    # via
+    #   astroid
+    #   mypy
