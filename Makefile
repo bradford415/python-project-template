@@ -17,13 +17,17 @@ venv: ## Create virtual environment
 	python -m venv .venv/${VENV_NAME} 
 
 test: ## Put pytests here
+	pytest tests/
+
+format: ## Reformats your code to a specific coding style
+	black ${python_source}
+	isort -rc ${python_source} 
 
 check:
 	mypy ${python_source}
-	pylint ${python_source}
-
-format:
-	black ${python_source}
+	black --check ${python_source}
+	isort --check-only -rc ${python_source}
+	test
 
 require:
 	pip install pip-tools

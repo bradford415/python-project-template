@@ -2,7 +2,7 @@
 # $ pip install pytemplate
 name = "pytemplate"
 version = "0.0.1"
-description = "A sample Python project"
+description = "A sample Python project."
 authors = ["Bradley Selee"]
 license = "LICENSE.txt"
 
@@ -12,9 +12,13 @@ license = "LICENSE.txt"
 [tool.poetry.dependencies]
 python = ">=3.9"
 matplotlib = "*"
+pytest = "*"
+
+# Linters/formatters
 mypy = "*"
 pylint = "*"
 black = "*"
+isort = "*"
 
 [build-system]
 requires = ["poetry-core"]
