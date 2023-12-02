@@ -13,7 +13,7 @@ A Python project template for writing readable, quality code that can be install
 ## Makefile
 
 ## Linting and Formatting
-This project, for the most part, follows the (Google Python Style Guide)[https://google.github.io/styleguide/pyguide.html]. A few exceptions are made such as line `max-line-length=120` in `pylintrc`
+This project, for the most part, follows the [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html). A few exceptions are made such as line `max-line-length=120` in `pylintrc`
 
 Below are a list of linters and formatters that are used in this project.
 
