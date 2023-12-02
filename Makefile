@@ -64,4 +64,4 @@ install_windows:
 
 create: venv install ## Create virtual environment and install dependencies and the project itself  
 
-create: venv install_windows
+create_windows: venv install_windows
