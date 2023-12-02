@@ -8,7 +8,7 @@ class Runner:
 
     def __init__(self, corpus):
         """Constructor for the Runner class
-        
+
         Args:
             corpus: body of text to encode/decode
         """
@@ -16,7 +16,7 @@ class Runner:
 
     def run(self):
         """Excecute the Runner class
-        
+
         Args:
             text: The text to encode and decode
         """
